@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Bike</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="statusBar">
+        <div class="status statusBar__element">
+          Проверь велосипед
+        </div>
+        <div class="statusBar__element">
+          <span class="statusBar__element-name">Скорость: </span
+          ><span class="speed">0</span><span> km/h</span>
+        </div>
+        <div class="statusBar__element">
+          <span class="statusBar__element-name">Свет: </span
+          ><span class="light">выкл</span>
+        </div>
+        <div class="statusBar__element">
+          <span class="statusBar__element-name">Звонок: </span
+          ><span class="bell">тишина</span>
+        </div>
+        <div class="statusBar__element">
+          <span class="statusBar__element-name">Передача: </span
+          ><span class="transmission">1</span>
+        </div>
+        <div class="statusBar__element">
+          <span class="statusBar__element-name">Руль: </span
+          ><span class="ruddle">0</span>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button type="button" name="KeyC" class="basicButton button-KeyC">
+          Check
+        </button>
+        <button type="button" name="KeyS" class="basicButton button-KeyS">
+          Start
+        </button>
+        <button
+          type="button "
+          name="ArrowUp"
+          class="basicButton button-ArrowUp"
+        >
+          Speed +
+        </button>
+        <button
+          type="button"
+          name="ArrowDown"
+          class="basicButton button-ArrowDown"
+        >
+          Speed -
+        </button>
+        <button
+          type="button"
+          name="ArrowLeft"
+          class="basicButton button-ArrowLeft"
+        >
+          TurnLeft
+        </button>
+        <button
+          type="button"
+          name="ArrowRight"
+          class="basicButton button-ArrowRight"
+        >
+          turnRight
+        </button>
+
+        <button type="button" name="Space" class="basicButton button-Space">
+          Stop
+        </button>
+        <button type="button" name="KeyL" class="basicButton button-KeyL">
+          Light
+        </button>
+        <button type="button" name="KeyB" class="basicButton button-KeyB">
+          Bell
+        </button>
+        <button type="button" name="KeyU" class="basicButton button-KeyU">
+          Transmission+
+        </button>
+        <button type="button" name="KeyD" class="basicButton button-KeyD">
+          Transmission-
+        </button>
+      </div>
+
+      <div class="notification"></div>
+      <div class="systems"></div>
+
+      <audio src="./96dcf8500f9679f.mp3" id="bell"></audio>
+    </div>
+
+    <script src="./driverClass.js" type="module"></script>
+    <script src="./bikeClass.js" type="module"></script>
+    <script src="./refs.js" type="module"></script>
+    <script src="./controls.js" type="module"></script>
+    <script src="./index.js" type="module"></script>
+  </body>
+</html>

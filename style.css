@@ -1,0 +1,193 @@
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.wrapper {
+  width: 400px;
+  margin: 0 auto;
+  padding-top: 20px;
+  color: #fff;
+}
+
+.status {
+  background-repeat: 20px;
+}
+
+.status::after,
+.status--good::after {
+  content: "";
+  display: inline-block;
+  margin-left: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.status::after {
+  background-color: red;
+}
+.status--good::after {
+  background-color: rgb(38, 230, 13);
+}
+
+.notification {
+  color: red;
+  position: absolute;
+  top: 10px;
+  right: 10%;
+  transform: translateX(200%);
+  opacity: 0;
+  transition: all 1000ms ease-in-out;
+}
+
+.systems {
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  left: 3%;
+  transform: translateX(-200%);
+  opacity: 0;
+  transition: all 1000ms ease-in-out;
+}
+
+.notification-show,
+.systems-show {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 1000ms ease-in-out;
+}
+
+.basicButton {
+  background-color: transparent;
+  border: 1px solid blueviolet;
+  border-radius: 5px;
+  min-width: 65px;
+  min-height: 40px;
+  outline: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+.active {
+  background-color: chartreuse;
+}
+
+.statusBar {
+  margin-bottom: 50px;
+}
+
+.statusBar__element {
+  margin-bottom: 10px;
+}
+
+.statusBar__element-name {
+  display: inline-block;
+  width: 60%;
+}
+
+.controls {
+  position: relative;
+  min-height: 50vh;
+}
+
+.button-ArrowUp {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.button-ArrowDown {
+  position: absolute;
+  top: calc(25% + 84px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.button-ArrowLeft {
+  position: absolute;
+  top: calc(25% + 42px);
+  left: calc(50% - 68px);
+  transform: translate(-50%, -50%);
+}
+
+.button-ArrowRight {
+  position: absolute;
+  top: calc(25% + 42px);
+  left: calc(50% + 69px);
+  transform: translate(-50%, -50%);
+}
+
+.button-KeyS {
+  position: absolute;
+  top: calc(25% + 42px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.button-KeyU {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 101px;
+}
+
+.button-KeyD {
+  position: absolute;
+  top: 47px;
+  right: 5px;
+  width: 101px;
+}
+
+.button-Space {
+  position: absolute;
+  top: 89px;
+  right: 5px;
+}
+
+.button-KeyC {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.button-KeyL {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.button-KeyB {
+  position: absolute;
+  top: 47px;
+  left: 5px;
+}
+
+/* LITE ON */
+
+.lightTheme {
+  background-color: #fff;
+}
+
+.lightTheme .wrapper {
+  color: #000;
+}
+
+.lightTheme .basicButton {
+  color: #000;
+}
+
+.lightTheme .systems {
+  color: #000;
+}
