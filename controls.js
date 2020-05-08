@@ -5,18 +5,6 @@ import refs from "./refs.js";
 const bike = new Bike();
 const driver = new Driver();
 
-const check = (bike, driver, el) => {
-  if (bike.condition > 0) return "Уже едем, всё хорошо ;)";
-  if (!bike.isWorking) return "Велосипед неисправен!";
-
-  if (driver.weight > bike.maxTransportWeight)
-    return "ОГО, я так много не потяну ◉_◉";
-
-  bike.condition = 1;
-  el.classList.add("status--good");
-  return "Можно ехать!";
-};
-
 const notificationAnimation = (notification) => {
   refs.notoficationOutput.innerHTML = notification;
   refs.notoficationOutput.classList.add("notification-show");
@@ -49,8 +37,6 @@ const systemsShowWithTimer = systemsShow();
 
 const controls = {
   ArrowUp: () => {
-    systemsShowWithTimer("скорости");
-
     if (bike.speedIncrement()) {
       notificationAnimation(bike.speedIncrement());
       refs.speedOutput.innerHTML = bike.speed;
@@ -58,17 +44,17 @@ const controls = {
       return;
     }
 
+    systemsShowWithTimer("скорости");
     refs.speedOutput.innerHTML = bike.speed;
   },
 
   ArrowDown: () => {
-    systemsShowWithTimer("скорости");
-
     if (bike.speedDecrement()) {
       notificationAnimation(bike.speedDecrement());
       return;
     }
 
+    systemsShowWithTimer("скорости");
     refs.speedOutput.innerHTML = bike.speed;
   },
 
@@ -97,11 +83,13 @@ const controls = {
   KeyC: () => {
     systemsShowWithTimer("защиты");
 
-    refs.statusOutput.innerHTML = check(bike, driver, refs.statusOutput);
+    refs.statusOutput.innerHTML = bike.check(bike, driver, refs.statusOutput);
   },
 
   KeyS: () => {
-    systemsShowWithTimer("движния");
+    if (bike.condition === 1) {
+      systemsShowWithTimer("движния");
+    }
 
     refs.statusOutput.innerHTML = bike.start();
     refs.speedOutput.innerHTML = bike.speed;

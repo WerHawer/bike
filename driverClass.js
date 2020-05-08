@@ -1,5 +1,5 @@
 class Driver {
-  constructor(name = "Vasil", age = 15, weight = 50) {
+  constructor(name = "Vlad", age = 20, weight = 80) {
     this.name = name;
     this.age = age;
     this.weight = weight;

@@ -38,7 +38,6 @@ const showPress = (e) => {
 
 const buttonControl = (e) => {
   if (e.target === e.currentTarget) return;
-  console.log(e.target.name);
   controls[e.target.name]();
 
   hidePress(e);
